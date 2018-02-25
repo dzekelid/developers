@@ -20,7 +20,7 @@ produces:
 consumes:
 - application/json
 paths:
-  /addon/linkers/{linker_key}/values:
+  /addon/linkers/{linker_key}/values/:
     parameters:
       summary: Parameters Add On Linkers Linker Key Values
       description: Parameters addon linkers linker key values
