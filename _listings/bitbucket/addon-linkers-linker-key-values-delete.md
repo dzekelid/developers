@@ -20,7 +20,7 @@ produces:
 consumes:
 - application/json
 paths:
-  /addon/linkers/{linker_key}/values:
+  /addon/linkers/{linker_key}/values/:
     delete:
       summary: Delete Add On Linkers Linker Key Values
       description: Delete addon linkers linker key values
