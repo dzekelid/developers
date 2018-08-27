@@ -1,27 +1,23 @@
 ---
 name: CircleCI
-description: 'Velocity is critical for software teams in todays competitive landscape,
-  but maintaining speed can be difficult as apps and systems grow larger and more
-  complex. CircleCIrsquo;s platform allows developers to rapidly release code (for
-  web and mobile apps) they trust by automating the build, test, and deploy process.
-  CircleCI enables developers to detect and fix bugs before they even reach customers.
-  Thousands of leading companies including Facebook, Kickstarter, Shyp and Spotify
-  rely on CircleCI to accelerate delivery of their code and enable developers to focus
-  on creating business value fast. '
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/circleci-logo.png
+x-slug: circleci
+description: CircleCI???s continuous integration and delivery platform makes it easy
+  for teams of all sizes to rapidly build and release quality software at scale.  Build
+  for Linux, macOS, and Android, in the cloud or behind your firewall.
+image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/28120-circleci.jpg
 x-kinRank: "8"
-x-alexaRank: ""
-tags:
-- Orchestration
-- Developers
-- Continuous Integration
-- Continuous Deployment
-created: "2018-03-10"
-modified: "2018-03-10"
-url: https://raw.githubusercontent.com/streamdata-gallery/developers/master/_listings/circleci/apis.yaml
+x-alexaRank: "15983"
+tags: Developers
+created: "2018-08-26"
+modified: "2018-08-26"
+url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/circleci/apis.md
 specificationVersion: "0.14"
 apis: []
 x-common:
+- type: x-api-gallery
+  url: http://charity.navigator.api.gallery.streamdata.io
+- type: x-api-stack
+  url: http://circleci.stack.network
 - type: x-blog
   url: https://circleci.com/blog/
 - type: x-blog-rss
@@ -32,8 +28,18 @@ x-common:
   url: https://circleci.com/changelog/
 - type: x-contact-form
   url: https://circleci.com/contact/
+- type: x-crunchbase
+  url: https://crunchbase.com/organization/circle-ci
 - type: x-documentation
   url: https://circleci.com/docs/
+- type: x-email
+  url: press@circleci.com
+- type: x-email
+  url: billing@circleci.com
+- type: x-email
+  url: privacy@circleci.com
+- type: x-email
+  url: sayhi@circleci.com
 - type: x-github
   url: https://github.com/circleci
 - type: x-linkedin
@@ -52,6 +58,8 @@ x-common:
   url: https://circleci.com/terms-of-service/
 - type: x-twitter
   url: https://twitter.com/circleci
+- type: x-website
+  url: http://circleci.com
 - type: x-website
   url: https://circleci.com/
 include: []

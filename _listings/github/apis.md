@@ -1,40 +1,25 @@
 ---
 name: GitHub
-description: GitHub is a social network for programmers. Git is a distributed software
-  management program created by Linus Torvalds, originally for the Linux Kernel Development.
-  GitHub is a hosted Git repository. Github allows you to take part in collaboration
-  by forking projects, sending and pulling requests, and monitoring development.
+x-slug: github
+description: GitHub brings together the worlds largest community of developers to
+  discover, share, and build better software. From open source projects to private
+  team repositories, were your all-in-one platform for collaborative development.
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/github-logo.png
 x-kinRank: "10"
-x-alexaRank: "70"
-tags:
-- Technology
-- Stack Network
-- Stack
-- Social
-- Social
-- SaaS
-- Programming
-- My API Stack
-- Management
-- Jobs
-- Issues
-- Issue Management
-- Imports
-- Hacker Storytelling
-- Developers
-- Coding
-- Code
-- Change Log Example
-- Change Log
-created: "2018-03-10"
-modified: "2018-03-10"
-url: https://raw.githubusercontent.com/streamdata-gallery/developers/master/_listings/github/apis.yaml
+x-alexaRank: "64"
+tags: Developers
+created: "2018-08-26"
+modified: "2018-08-26"
+url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/github/apis.md
 specificationVersion: "0.14"
 apis: []
 x-common:
-- type: x-net-library
+- type: x--net-library
   url: https://github.com/octokit/octokit.net
+- type: x-api-gallery
+  url: http://giphy.api.gallery.streamdata.io
+- type: x-api-stack
+  url: http://github.stack.network
 - type: x-base
   url: https://api.github.com
 - type: x-blog
