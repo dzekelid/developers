@@ -1,9 +1,58 @@
+---
 swagger: "2.0"
 x-collection-name: AWS Route 53
-x-complete: 1
+x-complete: 0
 info:
-  title: AWS Route 53 API
+  title: AWS Route 53 API Change Resource Record Sets
   version: 1.0.0
+  description: 'Create, change, update, or delete authoritative DNS information on
+    all Amazon Route 53 servers.Send a POST request to:             /2013-04-01/hostedzone/Amazon
+    Route 53 hosted ZoneID/rrset resource. The request body must include a document
+    with aChangeResourceRecordSetsRequest element. The request body contains a list
+    ofchange items, known as a change batch. Change batches are considered transactional
+    changes.When using the Amazon Route 53 API to change resource record sets, Amazon
+    Route 53 either makes all or none of thechanges in a change batch request. This
+    ensures that Amazon Route 53 never partially implements theintended changes to
+    the resource record sets in a hosted zone. For example, a change batch request
+    that deletes the CNAME record forwww.example.com and creates an alias resource
+    record set for www.example.com. Amazon Route 53 deletesthe first resource record
+    set and creates the second resource record set in a singleoperation. If either
+    the DELETE or the CREATE action fails, thenboth changes (plus any other changes
+    in the batch) fail, and the original CNAMErecord continues to exist.ImportantDue
+    to the nature of transactional changes, you can''t delete the same resourcerecord
+    set more than once in a single change batch. If you attempt to delete the same
+    changebatch more than once, Amazon Route 53 returns an InvalidChangeBatch error.NoteTo
+    create resource record sets for complex routing configurations, use either thetraffic
+    flow visual editor in the Amazon Route 53 console or the API actions for traffic
+    policies andtraffic policy instances. Save the configuration as a traffic policy,
+    then associate thetraffic policy with one or more domain names (such as example.com)
+    or subdomain names (suchas www.example.com), in the same hosted zone or in multiple
+    hosted zones. You can roll backthe updates if the new configuration isn''t performing
+    as expected. For more information, seeUsing Traffic Flow to Route DNSTraffic in
+    the Amazon Route 53 Developer Guide.Use ChangeResourceRecordsSetsRequest to perform
+    the following actions:                  CREATE: Creates a resource record set
+    that has the specified values.                  DELETE: Deletes an existing resource
+    record set that has the specified values.                  UPSERT: If a resource
+    record set does not already exist, AWS createsit. If a resource set does exist,
+    Amazon Route 53 updates it with the values in the request. The values that you
+    need to include in the request depend on the type of resource record set that
+    you''re creating, deleting, or updating:            Basic resource record sets
+    (excluding alias, failover, geolocation, latency, and weighted resource record
+    sets)                           Name                                 Type                                 TTL                           Failover,
+    geolocation, latency, or weighted resource record sets (excluding alias resource
+    record sets)                           Name                                 Type                                 TTL                                 SetIdentifier                           Alias
+    resource record sets (including failover alias, geolocation alias, latency alias,
+    and weighted alias resource record sets)                           Name                                 Type                                 AliasTarget
+    (includes DNSName, EvaluateTargetHealth, and HostedZoneId)                  SetIdentifier
+    (for failover, geolocation, latency, and weighted resource record sets)When you
+    submit a ChangeResourceRecordSets request, Amazon Route 53 propagates your changes
+    to all of the Amazon Route 53 authoritative DNS servers. While your changes are
+    propagating, GetChange returns a status of PENDING. When propagation is complete,
+    GetChange returns a status of INSYNC. Changes generally propagate to all Amazon
+    Route 53 name servers in a few minutes. In rare circumstances, propagation can
+    take up to 30 minutes. For more information, see GetChange       For information
+    about the limits on a ChangeResourceRecordSets request, see Limits in the Amazon
+    Route 53 Developer Guide.'
 schemes:
 - http
 produces:
@@ -339,51 +388,17 @@ paths:
           description: OK
       tags:
       - Changes
-  /2013-04-01/hostedzonesbyname?dnsname=DNSName&amp;hostedzoneid=HostedZoneId&amp;maxitems=MaxItems:
-    get:
-      summary: List Hosted Zones By Name
-      description: 'Retrieves a list of your hosted zones in lexicographic order.
-        Send a GETrequest to the /2013-04-01/hostedzonesbyname resource. The response
-        includes aHostedZones child element for each hosted zone created by the current
-        AWSaccount.             ListHostedZonesByName sorts hosted zones by name with
-        the labels reversed.For example:                  com.example.www.               Note
-        the trailing dot, which can change the sort order in some circumstances.If
-        the domain name includes escape characters or Punycode,ListHostedZonesByName
-        alphabetizes the domain name using the escaped orPunycoded value, which is
-        the format that Amazon Route 53 saves in its database. For example, to createa
-        hosted zone for example.com, specify ex\344mple.com for the domain name.ListHostedZonesByName
-        alphabetizes it as:                  com.ex\344mple.               The labels
-        are reversed and alphabetized using the escaped value. For more informationabout
-        valid domain name formats, including internationalized domain names, see DNS
-        Domain Name Format in theAmazon Route 53 Developer Guide.Amazon Route 53 returns
-        up to 100 items in each response. If you have a lot of hosted zones, usethe
-        MaxItems parameter to list them in groups of up to 100. The response includesvalues
-        that help navigate from one group of MaxItems hosted zones to thenext:The
-        DNSName and HostedZoneId elements in the responsecontain the values, if any,
-        specified for the dnsname andhostedzoneid parameters in the request that produced
-        the currentresponse.The MaxItems element in the response contains the value,
-        if any, thatyou specified for the maxitems parameter in the request that produced
-        thecurrent response.If the value of IsTruncated in the response is true, there
-        are morehosted zones associated with the current AWS account. If IsTruncated
-        is false, this response includes the last hosted zonethat is associated with
-        the current account. The NextDNSName element andNextHostedZoneId elements
-        are omitted from the response.The NextDNSName and NextHostedZoneId elements
-        in theresponse contain the domain name and the hosted zone ID of the next
-        hosted zone that isassociated with the current AWS account. If you want to
-        list more hosted zones, makeanother call to ListHostedZonesByName, and specify
-        the value ofNextDNSName and NextHostedZoneId in the dnsnameand hostedzoneid
-        parameters, respectively.'
-      operationId: listhostedzonesbyname
-      x-api-path-slug: 20130401hostedzonesbynamednsnamednsnameamphostedzoneidhostedzoneidampmaxitemsmaxitems-get
-      parameters:
-      - in: path
-        name: dnsname
-        description: (Optional) For your first request to ListHostedZonesByName, include
-          thednsname parameter only if you want to specify the name of the first hosted
-          zonein the response
-        type: string
-      responses:
-        200:
-          description: OK
-      tags:
-      - Hosted Zones
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---

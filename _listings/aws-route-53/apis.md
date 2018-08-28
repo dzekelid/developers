@@ -25,11 +25,201 @@ image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/l
 x-kinRank: "8"
 x-alexaRank: "0"
 tags: Developers
-created: "2018-08-26"
-modified: "2018-08-26"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/apis.md
 specificationVersion: "0.14"
-apis: []
+apis:
+- name: AWS Route 53 API - Get Checker Ip Ranges
+  x-api-slug: 20130401checkeripranges-get
+  description: GetCheckerIpRanges still works, but we recommend that you download
+    ip-ranges.json, which includes IP address ranges for all AWS services. For more
+    information, see IP Address Ranges of Amazon Route 53 Servers in the Amazon Route
+    53 Developer Guide.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401checkeripranges-get-openapi.md
+- name: AWS Route 53 API - Delete Health Check
+  x-api-slug: 20130401healthcheckhealthcheckid-delete
+  description: Deletes a health check. Send a DELETE request to the/2013-04-01/healthcheck/health
+    check ID            resource.ImportantAmazon Route 53 does not prevent you from
+    deleting a health check even if the health check isassociated with one or more
+    resource record sets. If you delete a health check and you don'tupdate the associated
+    resource record sets, the future status of the health check can't bepredicted
+    and may change. This will affect the routing of DNS queries for your DNS failoverconfiguration.
+    For more information, see Replacing and Deleting Health Checks in the Amazon Route
+    53 Developer Guide.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401healthcheckhealthcheckid-delete-openapi.md
+- name: AWS Route 53 API - Get Health Check
+  x-api-slug: 20130401healthcheckhealthcheckid-get
+  description: Gets information about a specified health check. Send a GET request
+    to the/2013-04-01/healthcheck/health check ID             resource. Formore information
+    about using the console to perform this operation, see Amazon Route 53 Health
+    Checks and DNS Failover in theAmazon Route 53 Developer Guide.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401healthcheckhealthcheckid-get-openapi.md
+- name: AWS Route 53 API - Update Health Check
+  x-api-slug: 20130401healthcheckhealthcheckid-post
+  description: Updates an existing health check.Send a POST request to the /2013-04-01/healthcheck/health
+    check ID             resource. Therequest body must include a document with an
+    UpdateHealthCheckRequestelement. For more information about updating health checks,
+    see Creating, Updating, and DeletingHealth Checks in the Amazon Route 53 Developer
+    Guide.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401healthcheckhealthcheckid-post-openapi.md
+- name: AWS Route 53 API - Create Hosted Zone
+  x-api-slug: 20130401hostedzone-post
+  description: Creates a new public hosted zone, used to specify how the Domain Name
+    System (DNS)routes traffic on the Internet for a domain, such as example.com,
+    and its subdomains. ImportantPublic hosted zones can't be converted to a private
+    hosted zone or vice versa.Instead, create a new hosted zone with the same name
+    and create new resource recordsets.Send a POST request to the /2013-04-01/hostedzone
+    resource. The request body must include a documentwith a CreateHostedZoneRequest
+    element. The response returns theCreateHostedZoneResponse element containing metadata
+    about the hostedzone.Fore more information about charges for hosted zones, see
+    Amazon Route 53 Pricing.Note the following:You can't create a hosted zone for
+    a top-level domain (TLD).Amazon Route 53 automatically creates a default SOA record
+    and four NS records for the zone.For more information about SOA and NS records,
+    see NS and SOA Records that Amazon Route 53 Creates for a Hosted Zone in the Amazon
+    Route 53 Developer Guide.If your domain is registered with a registrar other than
+    Amazon Route 53, you must update thename servers with your registrar to make Amazon
+    Route 53 your DNS service. For more information, seeConfiguring Amazon Route 53
+    as your DNSService in the Amazon Route 53 Developer's Guide.After creating a zone,
+    its initial status is PENDING. This means that itis not yet available on all DNS
+    servers. The status of the zone changes to INSYNCwhen the NS and SOA records are
+    available on all Amazon Route 53 DNS servers. When trying to create a hosted zone
+    using a reusable delegation set, specify anoptional DelegationSetId, and Amazon
+    Route 53 would assign those 4 NS records for the zone, instead ofallotting a new
+    one.
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401hostedzone-post-openapi.md
+- name: AWS Route 53 API - Change Resource Record Sets
+  x-api-slug: 20130401hostedzoneidrrset-post
+  description: 'Create, change, update, or delete authoritative DNS information on
+    all Amazon Route 53 servers.Send a POST request to:             /2013-04-01/hostedzone/Amazon
+    Route 53 hosted ZoneID/rrset resource. The request body must include a document
+    with aChangeResourceRecordSetsRequest element. The request body contains a list
+    ofchange items, known as a change batch. Change batches are considered transactional
+    changes.When using the Amazon Route 53 API to change resource record sets, Amazon
+    Route 53 either makes all or none of thechanges in a change batch request. This
+    ensures that Amazon Route 53 never partially implements theintended changes to
+    the resource record sets in a hosted zone. For example, a change batch request
+    that deletes the CNAME record forwww.example.com and creates an alias resource
+    record set for www.example.com. Amazon Route 53 deletesthe first resource record
+    set and creates the second resource record set in a singleoperation. If either
+    the DELETE or the CREATE action fails, thenboth changes (plus any other changes
+    in the batch) fail, and the original CNAMErecord continues to exist.ImportantDue
+    to the nature of transactional changes, you can''t delete the same resourcerecord
+    set more than once in a single change batch. If you attempt to delete the same
+    changebatch more than once, Amazon Route 53 returns an InvalidChangeBatch error.NoteTo
+    create resource record sets for complex routing configurations, use either thetraffic
+    flow visual editor in the Amazon Route 53 console or the API actions for traffic
+    policies andtraffic policy instances. Save the configuration as a traffic policy,
+    then associate thetraffic policy with one or more domain names (such as example.com)
+    or subdomain names (suchas www.example.com), in the same hosted zone or in multiple
+    hosted zones. You can roll backthe updates if the new configuration isn''t performing
+    as expected. For more information, seeUsing Traffic Flow to Route DNSTraffic in
+    the Amazon Route 53 Developer Guide.Use ChangeResourceRecordsSetsRequest to perform
+    the following actions:                  CREATE: Creates a resource record set
+    that has the specified values.                  DELETE: Deletes an existing resource
+    record set that has the specified values.                  UPSERT: If a resource
+    record set does not already exist, AWS createsit. If a resource set does exist,
+    Amazon Route 53 updates it with the values in the request. The values that you
+    need to include in the request depend on the type of resource record set that
+    you''re creating, deleting, or updating:            Basic resource record sets
+    (excluding alias, failover, geolocation, latency, and weighted resource record
+    sets)                           Name                                 Type                                 TTL                           Failover,
+    geolocation, latency, or weighted resource record sets (excluding alias resource
+    record sets)                           Name                                 Type                                 TTL                                 SetIdentifier                           Alias
+    resource record sets (including failover alias, geolocation alias, latency alias,
+    and weighted alias resource record sets)                           Name                                 Type                                 AliasTarget
+    (includes DNSName, EvaluateTargetHealth, and HostedZoneId)                  SetIdentifier
+    (for failover, geolocation, latency, and weighted resource record sets)When you
+    submit a ChangeResourceRecordSets request, Amazon Route 53 propagates your changes
+    to all of the Amazon Route 53 authoritative DNS servers. While your changes are
+    propagating, GetChange returns a status of PENDING. When propagation is complete,
+    GetChange returns a status of INSYNC. Changes generally propagate to all Amazon
+    Route 53 name servers in a few minutes. In rare circumstances, propagation can
+    take up to 30 minutes. For more information, see GetChange       For information
+    about the limits on a ChangeResourceRecordSets request, see Limits in the Amazon
+    Route 53 Developer Guide.'
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401hostedzoneidrrset-post-openapi.md
+- name: AWS Route 53 API - List Hosted Zones By Name
+  x-api-slug: 20130401hostedzonesbynamednsnamednsnameamphostedzoneidhostedzoneidampmaxitemsmaxitems-get
+  description: 'Retrieves a list of your hosted zones in lexicographic order. Send
+    a GETrequest to the /2013-04-01/hostedzonesbyname resource. The response includes
+    aHostedZones child element for each hosted zone created by the current AWSaccount.             ListHostedZonesByName
+    sorts hosted zones by name with the labels reversed.For example:                  com.example.www.               Note
+    the trailing dot, which can change the sort order in some circumstances.If the
+    domain name includes escape characters or Punycode,ListHostedZonesByName alphabetizes
+    the domain name using the escaped orPunycoded value, which is the format that
+    Amazon Route 53 saves in its database. For example, to createa hosted zone for
+    example.com, specify ex\344mple.com for the domain name.ListHostedZonesByName
+    alphabetizes it as:                  com.ex\344mple.               The labels
+    are reversed and alphabetized using the escaped value. For more informationabout
+    valid domain name formats, including internationalized domain names, see DNS Domain
+    Name Format in theAmazon Route 53 Developer Guide.Amazon Route 53 returns up to
+    100 items in each response. If you have a lot of hosted zones, usethe MaxItems
+    parameter to list them in groups of up to 100. The response includesvalues that
+    help navigate from one group of MaxItems hosted zones to thenext:The DNSName and
+    HostedZoneId elements in the responsecontain the values, if any, specified for
+    the dnsname andhostedzoneid parameters in the request that produced the currentresponse.The
+    MaxItems element in the response contains the value, if any, thatyou specified
+    for the maxitems parameter in the request that produced thecurrent response.If
+    the value of IsTruncated in the response is true, there are morehosted zones associated
+    with the current AWS account. If IsTruncated is false, this response includes
+    the last hosted zonethat is associated with the current account. The NextDNSName
+    element andNextHostedZoneId elements are omitted from the response.The NextDNSName
+    and NextHostedZoneId elements in theresponse contain the domain name and the hosted
+    zone ID of the next hosted zone that isassociated with the current AWS account.
+    If you want to list more hosted zones, makeanother call to ListHostedZonesByName,
+    and specify the value ofNextDNSName and NextHostedZoneId in the dnsnameand hostedzoneid
+    parameters, respectively.'
+  image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Networking_AmazonRoute53.png
+  humanURL: https://aws.amazon.com/route53/
+  baseURL: :///
+  tags: Amazon Web Services, DNS, API Service Provider, API Service Provider, API
+    Provider, Profiles, Relative Data, Service API
+  properties:
+  - type: x-openapi-spec
+    url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/aws-route-53/20130401hostedzonesbynamednsnamednsnameamphostedzoneidhostedzoneidampmaxitemsmaxitems-get-openapi.md
 x-common:
 - type: x-api-gallery
   url: http://aws.rekognition.api.gallery.streamdata.io

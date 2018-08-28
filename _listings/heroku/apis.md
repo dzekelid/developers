@@ -7,8 +7,8 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/211-heroku
 x-kinRank: "8"
 x-alexaRank: "6044"
 tags: Developers
-created: "2018-08-26"
-modified: "2018-08-26"
+created: "2018-08-27"
+modified: "2018-08-27"
 url: https://raw.githubusercontent.com/streamdata-gallery-topics/developers/master/_listings/heroku/apis.md
 specificationVersion: "0.14"
 apis: []
